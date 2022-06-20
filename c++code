@@ -1,0 +1,37 @@
+struct ListNode* rotateRight(struct ListNode* head, int k){
+if(head==NULL||k==0)
+    return head;
+    
+    int l=0;
+     struct ListNode *t= head;
+    while(t->next!=NULL)
+    {   l++;
+        t=t->next;
+        
+    }
+    
+    l++;
+    
+    t->next=head;
+    int c=l-k%l;
+    
+    struct ListNode *p5= head;
+    while(--c)
+    {
+        p5=p5->next;
+        
+    }
+    
+    head=p5->next;
+    p5->next=NULL;
+    return head;
+        
+    
+    
+    
+  
+    
+}
+
+
+https://leetcode.com/problems/rotate-list/
